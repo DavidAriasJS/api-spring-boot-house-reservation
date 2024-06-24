@@ -12,16 +12,18 @@ Esta es una API de reserva de casas que permite crear y listar reservas. La API 
 1. Clona el repositorio:
 
     ```sh
-    git clone <URL del repositorio>
-    cd house-reservation
+    git clone https://github.com/BryanAriasC/api-spring-boot-house-reservation.git
+    cd api-spring-boot-house-reservation
     ```
 
 2. Configura el archivo `application.properties` en `src/main/resources` con la URL de tu base de datos PostgreSQL:
 
     ```properties
-    spring.datasource.url=jdbc:postgresql://localhost:5432/your_database
-    spring.datasource.username=your_username
-    spring.datasource.password=your_password
+    spring.datasource.url=jdbc:postgresql://localhost:5432/reservationdb
+    spring.datasource.username=reservationuser
+    spring.datasource.password=reservationpass
+    spring.datasource.driver-class-name=org.postgresql.Driver
+    spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
     spring.jpa.hibernate.ddl-auto=update
     spring.jpa.show-sql=true
 
@@ -52,13 +54,13 @@ Esta es una API de reserva de casas que permite crear y listar reservas. La API 
     ```json
     {
         "id": "1456088-4",
-        "name": "Gonzalo",
-        "lastname": "Pérez",
-        "age": 33,
-        "phoneNumber": "56988123222",
+        "name": "David",
+        "lastname": "Arias",
+        "age": 31,
+        "phoneNumber": "962993588",
         "startDate": "2022-03-04",
         "endDate": "2022-03-04",
-        "houseId": "213132",
+        "houseId": "123456",
         "discountCode": "D054A23"
     }
     ```
@@ -86,4 +88,4 @@ Para ejecutar las pruebas unitarias:
   - Los logs se configuran en el archivo `application.properties`.
 
 ## Autor
-- David Arias
+- **David Arias** by `bideafactory`
